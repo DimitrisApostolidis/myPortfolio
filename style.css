@@ -1,0 +1,95 @@
+/* Ομαλή κύλιση για τα links του μενού */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Ρυθμίσεις για να πιάνει κάθε ενότητα ολόκληρη την οθόνη */
+/* Τέλεια ισορροπία: Πλήρης οθόνη, αλλά το περιεχόμενο ξεκινάει από ψηλά */
+section {
+    min-height: 100vh; /* Το section πιάνει υποχρεωτικά όλη την οθόνη (κρύβει το από κάτω) */
+    padding-top: 130px; /* Ξεκινάει το κείμενο από ψηλά, σε ωραία απόσταση από το μενού */
+    padding-bottom: 80px;
+    scroll-margin-top: 70px; 
+    
+    /* Προσοχή: ΔΕΝ βάζουμε display: flex εδώ για να μην τα κεντράρει στη μέση! */
+}
+
+/* Καθαρό, φωτεινό background για το Hero */
+#hero {
+    background-color: #fafafa; 
+}
+
+/* Διαμόρφωση της κυκλικής φωτογραφίας */
+.profile-img {
+    max-width: 350px;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border: 8px solid white; /* Λευκό περίγραμμα σαν κάδρο */
+}
+
+/* Το εφέ gradient στον τίτλο της ειδικότητας */
+.hero-subtitle {
+    background: linear-gradient(90deg, #007bff, #00d2ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Εφέ στα εικονίδια όταν περνάει το ποντίκι από πάνω (Hover) */
+.social-icon {
+    transition: all 0.3s ease;
+}
+.social-icon:hover {
+    color: #007bff !important;
+    transform: translateY(-3px); /* Σηκώνονται ελαφρώς προς τα πάνω */
+}
+
+/* Εφέ στις κάρτες των Projects (Hover Effect) */
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    transform: translateY(-10px); /* Σηκώνει την κάρτα 10px πάνω */
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.15) !important; /* Μεγαλώνει τη σκιά */
+}
+
+/* Για να είναι οι εικόνες όλες στο ίδιο μέγεθος αν ανεβάσεις δικές σου */
+.project-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Το στυλ για το link του μενού που είναι ενεργό (Active) */
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #00d2ff !important; /* Ένα ωραίο γαλάζιο/κυανό χρώμα */
+    font-weight: bold;
+    border-bottom: 2px solid #00d2ff; /* Μια διακριτική υπογράμμιση */
+    transition: all 0.3s ease;
+}
+
+/* Απαλό animation όταν αλλάζει το χρώμα στα links του μενού */
+.navbar-nav .nav-link {
+    transition: all 0.3s ease;
+}
+
+
+/* Αρχική κατάσταση: Το στοιχείο είναι αόρατο και ελαφρώς πιο κάτω */
+.hidden-element {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.7s ease-out;
+}
+
+/* Τελική κατάσταση: Το στοιχείο εμφανίζεται (προστίθεται από τη JS) */
+.show-element {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Προαιρετικό: Καθυστέρηση στην εμφάνιση για να βγαίνουν η μία μετά την άλλη */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.3s; }
+.delay-3 { transition-delay: 0.5s; }
