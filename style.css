@@ -3,12 +3,6 @@ html {
     scroll-behavior: smooth;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-}
-
 /* Ρυθμίσεις για να πιάνει κάθε ενότητα ολόκληρη την οθόνη */
 /* Τέλεια ισορροπία: Πλήρης οθόνη, αλλά το περιεχόμενο ξεκινάει από ψηλά */
 section {
